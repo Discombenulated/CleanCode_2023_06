@@ -24,4 +24,11 @@ describe('Chance...', () => {
         expect(CERTAIN.and(IMPOSSIBLE).equals(IMPOSSIBLE)).toBe(true);
         expect(CERTAIN.and(EQUALLY_LIKELY).equals(EQUALLY_LIKELY)).toBe(true);
     })
+
+    test('can get a probability for one of many events happening', () => {
+        expect(CERTAIN.or(CERTAIN).equals(CERTAIN)).toBe(true);
+        expect(CERTAIN.or(IMPOSSIBLE).equals(CERTAIN)).toBe(true);
+        expect(EQUALLY_LIKELY.or(EQUALLY_LIKELY).equals(new Chance(0.75))).toBe(true);
+        expect(new Chance(0.4).or(new Chance(0.25)).equals(new Chance(0.55))).toBe(true);
+    })
 })

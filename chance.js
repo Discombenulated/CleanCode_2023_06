@@ -14,6 +14,12 @@ class Chance{
     and(other) {
         return new Chance(this._likelihood * other._likelihood)
     }
+
+    or(other){
+        var result = this.not().and(other.not()).not();
+        console.log(result._likelihood);
+        return result;
+    }
 }
 
 const CERTAIN = new Chance(1);
