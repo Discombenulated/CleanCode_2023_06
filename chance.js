@@ -10,6 +10,10 @@ class Chance{
     not() {
         return new Chance(1-this._likelihood);
     }
+
+    and(other) {
+        return new Chance(this._likelihood * other._likelihood)
+    }
 }
 
 const CERTAIN = new Chance(1);
