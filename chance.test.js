@@ -1,8 +1,4 @@
-const {Chance} = require("./chance")
-
-const CERTAIN = new Chance(1);
-const EQUALLY_LIKELY = new Chance(0.5);
-const IMPOSSIBLE = new Chance(0);
+const {Chance, CERTAIN, EQUALLY_LIKELY, IMPOSSIBLE} = require("./chance")
 
 describe('Chance...', () => {
     test('is equal to a chance with the same likelihood', () => {

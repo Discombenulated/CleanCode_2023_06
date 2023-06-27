@@ -8,4 +8,8 @@ class Chance{
     }
 }
 
-module.exports = {Chance}
+const CERTAIN = new Chance(1);
+const EQUALLY_LIKELY = new Chance(0.5);
+const IMPOSSIBLE = new Chance(0);
+
+module.exports = {Chance, CERTAIN, EQUALLY_LIKELY, IMPOSSIBLE}
