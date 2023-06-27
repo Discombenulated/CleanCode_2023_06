@@ -6,6 +6,10 @@ class Chance{
     equals(other){
         return other._likelihood == this._likelihood;
     }
+
+    not() {
+        return new Chance(1-this._likelihood);
+    }
 }
 
 const CERTAIN = new Chance(1);
