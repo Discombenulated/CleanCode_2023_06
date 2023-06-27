@@ -1,6 +1,10 @@
 class Chance{
-    equals(){
-        return true;
+    constructor(likelihood){
+        this._likelihood = likelihood;
+    }
+
+    equals(other){
+        return other._likelihood == this._likelihood;
     }
 }
 
