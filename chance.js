@@ -4,7 +4,8 @@ class Chance{
     }
 
     equals(other){
-        return other._likelihood == this._likelihood;
+        const THRESHOLD = 0.000001;
+        return Math.abs(this._likelihood - other._likelihood) <= THRESHOLD;
     }
 
     not() {
@@ -12,13 +13,11 @@ class Chance{
     }
 
     and(other) {
-        return new Chance(this._likelihood * other._likelihood)
+        return new Chance(this._likelihood * other._likelihood);
     }
 
     or(other){
-        var result = this.not().and(other.not()).not();
-        console.log(result._likelihood);
-        return result;
+        return this.not().and(other.not()).not();
     }
 }
 
