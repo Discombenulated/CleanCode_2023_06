@@ -9,7 +9,7 @@ class Chance{
     }
 
     not() {
-        return new Chance(1-this._likelihood);
+        return new Chance(CERTAIN._likelihood - this._likelihood);
     }
 
     and(other) {
